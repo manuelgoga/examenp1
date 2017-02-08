@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<!--link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css"
+	data-transition="slide" -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function (){  //Funcion por defecto
+			//alert("Hola mundo");
+			$("#btnsumar").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var suma=n1+n2;
+				//alert("El resultado de la suma es: " + suma);
+				$("#resulOPB").val("La suma de: "+n1+" + "+n2+" = "+suma); //Lo mandamos al campo de texto resulsuma
+			});
+			$("#btnrestar").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var res=n1-n2;
+				$("#resulOPB").val("La resta de: "+n1+" - "+n2+" = "+res); //Lo mandamos al campo de texto resulsuma
+			});
+			$("#btnmultiplicar").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var multi=n1*n2;
+				$("#resulOPB").val("La multiplicación de: "+n1+" * "+n2+" = "+multi); //Lo mandamos al campo de texto resulsuma
+			});
+			$("#btndividir").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var divi=n1/n2;
+				$("#resulOPB").val("La divición de: "+n1+" / "+n2+" = "+divi); //Lo mandamos al campo de texto resulsuma
+			});
+
+			$("#btnsf").click(function(){
+				var n3=parseInt($("#num3").val());
+				var AC11=0,AC22=1, imp22=0;
+				var cadena1=0,cadena2=0;
+				while(AC22<n3){
+					imp22=AC11+AC22;
+					AC11=AC22;
+					AC22=imp22;
+					cadena2=cadena2+" "+imp22;
+					var vf=n3-2;
+					if(AC11<vf){
+						$("#resulSF").val("La serie fibonaci: "+cadena2);
+					}
+					
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div data-role="page" id="Principal">
+		<div data-role="header">
+			<p>Principal</p>
+		</div>	
+		<div data-role="content">
+			<p>DE CLICK SOBRE UN BOTON</p>
+			<a href="#OPB" data-role="button" data-transition="slide">Operaciones Basicas</a>
+			<a href="#SF" data-role="button" data-transition="slideup">Serie Fibonaci</a>
+			<a href="#DD" data-role="button" data-transition="slidedown">DATOS DEL DESARROLLADOR</a>
+		</div>
+		<div data-role="footer">
+			<p>Pie de aplicación</p>
+		</div>
+	</div>
+	<div data-role="page" id="OPB">
+		<div data-role="header">
+			<p>OPERACIONES BASICAS</p>
+		</div>	
+		<div data-role="content">
+			<input type="number" id="num1" placeholder="Escribe un número">
+			<input type="number" id="num2" placeholder="Escribe segundo numero">
+			<p>Selecciona una operación</p>
+			<input type="button" id="btnsumar" value="Calcular Suma">
+			<input type="button" id="btnrestar" value="Calcular Resta">
+			<input type="button" id="btnmultiplicar" value="Calcular Mltiplicación">
+			<input type="button" id="btndividir" value="Calcular Divición">
+			<input type="text" id="resulOPB" placeholder="El resultado de la operacion se mostarar aca.">
+		</div>
+		<div data-role="footer">
+			<p>Pie de aplicación</p>
+		</div>
+	</div>	
+	<div data-role="page" id="SF">
+		<div data-role="header">
+			<p>SERIE FIBONACI</p>
+		</div>	
+		<div data-role="content">
+			<p>Inserte el numero a sacar la serie</p>
+			<input type="number" id="num3" placeholder="Escribe el numero">
+			<input type="button" id="btnsf" value="OBTENER SERIE">
+			<input type="text" id="resulSF" placeholder="El resultado de la serie se mostarar aca.">
+		</div>
+		<div data-role="footer">
+			<p>Pie de aplicación</p>
+		</div>
+	</div>	
+	<div data-role="page" id="DD">
+		<div data-role="header">
+			<p>DATOS DEL DESARROLLADOR</p>
+		</div>	
+		<div data-role="content">
+			<p>NOMBRE</p>
+			<p>MANUEL GONZALEZ GARCIA</p>
+			<p>ESTUDIOS</p>
+			<p>13940057</p>
+			<p>ING. SISTEMAS COMPUTACIONALES</p>
+			<p>BASE DE DATOS PARA DISPOSITIVOS MOVILES</p>
+			<p>CONTACTO</p>
+			<p>magoga65@gmail.com</p>
+			<p>2761035193</p>
+
+		</div>
+		<div data-role="footer">
+			<p>Pie de aplicación</p>
+		</div>
+	</div>	
+</body>
+</html>
